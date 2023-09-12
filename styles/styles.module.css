@@ -1,0 +1,964 @@
+/* App.css */
+.my-body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+  background-color: #000000;
+}
+
+.main {
+  text-align: center;
+  vertical-align: center;
+  line-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 180px;
+  position: relative;
+}
+
+.navbar-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-line {
+  position: absolute;
+  bottom: 25px; 
+  left: 180px; 
+  right: 190px; 
+  height: 2px;
+  background-color: white;
+  z-index: -1;
+}
+
+.button-content {
+  display: flex; 
+  align-items: center; 
+}
+
+.button-icon {
+  width: 20px; 
+  height: auto;
+  margin-left: 5px; 
+}
+
+.navbar-link {
+ font-family: Tomorrow;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 120px; /* Adjust the padding values as needed */
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.vs-lowercase {
+  text-transform: lowercase;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-image{
+  max-width: 110%;
+  height: auto;
+  max-height: 110%;
+  margin-top: 22px;
+}
+
+.right-image {
+  max-width: 110%;
+  height: auto;
+  max-height: 110%;
+}
+
+.text-container {
+  flex: 2;
+}
+
+.header-item h1 {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 64px;
+  font-weight: 625;
+  font-width: 25;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.text-container h1 {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 68px;
+  font-weight: 625;
+  font-width: 25;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.header-line {
+  position: absolute;
+  width: calc(100% - 160px); /* Adjust width with left and right padding */
+  height: 2px;
+  background-color: white;
+  bottom: 0;
+  left: 80px; /* Add left padding */
+  right: 80px; /* Add right padding */
+}
+
+
+.header-item p {
+  font-family: 'Tomorrow', sans-serif;
+opacity: 0.64;
+  font-weight: 500;
+line-height: 32px; /* 160% */
+letter-spacing: 1.2px;
+text-transform: uppercase;
+padding: 0 100px;
+font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+
+/* 
+.announcement-bar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 170px; 
+}
+
+.announcement-container {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; 
+  margin-right: 10px; 
+  animation: slide 8s linear infinite;
+}
+
+.announcement-text {
+  color: #FFF;
+  font-family: Tomorrow;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.separator {
+  color: white; 
+  margin: 0 100px; 
+  font-size: 20px; 
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(calc(-100% + 20vw)); 
+  }
+} */
+ 
+.stats-section {
+  margin-top: 150px;
+  color: white;
+}
+
+.stats-section h2 {
+text-align: center; 
+font-family: Roboto Flex;
+font-size: 45px;
+font-style: normal;
+color: #ffffff;
+font-weight: 625;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.scoreboard {
+  /* display: flex; */
+  flex-direction: column; 
+  
+  /* justify-content: center; */
+}
+
+.scoreboard-item-image {
+  width: calc(100% - 400px); 
+  margin-left: 200px; 
+  margin-right: 200px; 
+  text-align: center; 
+  margin-bottom: 10px;
+}
+
+.scoreboard-item-image img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.scoreboard-item-container {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoreboard-item {
+  flex: 1;
+  text-align: center;
+  /* display: flex; */
+  color: white;
+}
+
+.scoreboard-item-left {
+  display: flex;
+  align-items: center;
+}
+
+.score-arrow-left-arrow-container {
+  margin-left: -125px; 
+  overflow: hidden;
+  
+}
+
+.score-arrow-left-arrow {
+  width: 30px;
+  height: 30px;
+  transform: scale(0.6);
+}
+
+.scoreboard-item-right {
+  
+  display: flex;
+  align-items: center;
+  /* text-align: right !important; */
+}
+
+.score-arrow-right-arrow-container {
+  position: absolute; /* Change to absolute positioning */
+  top: 50%;
+   transform: translateY(-50%) scale(0.1);
+  right: 10px;
+}
+
+.score-arrow-right-arrow {
+  
+ width: 30px;
+  height: 30px;
+  transform: scale(0.1);
+}
+
+.scoreboard-item.left-score {
+font-weight: bold;
+color: #F03844;
+font-family: 'Handjet', sans-serif; 
+font-size: 128px;
+font-style: thin;
+margin-left: 230px; 
+text-align: left;
+font-weight: 200;
+line-height: normal;
+text-transform: uppercase;
+text-shadow: 0px 4px 50px #FF577F;
+}
+
+.scoreboard-item.stat-title {
+font-family: 'Tomorrow', sans-serif; 
+color: #ffffff;
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 2.88px;
+text-transform: uppercase;
+text-align: center; 
+}
+
+.scoreboard-item.right-score {
+    position: relative;
+font-weight: bold;
+font-family: 'Handjet', sans-serif; 
+color: #F6AC0E;
+font-size: 128px;
+margin-right: 230px; 
+text-align: right;
+font-style: thin;
+font-weight: 200;
+line-height: normal;
+text-transform: uppercase;
+text-shadow: 0px 4px 50px #FFF84F;
+}
+
+.qanda-section {
+  margin-top: 100px;
+  color: white;
+  font-family: 'Roboto Flex', sans-serif;
+  padding: 0 200px; 
+}
+
+.qa-item {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 5px 0;
+  color: white;
+}
+
+.question {
+  font-size: 24px;
+  font-family: 'Tomorrow', sans-serif;
+}
+
+.answer {
+  font-size: 16px;
+  margin-top: 3px;
+  font-family: 'Tomorrow', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 200px;
+  position: relative;
+}
+
+.footer-left,
+.footer-right {
+  color: white;
+  font-family: 'Tomorrow', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px; /* Match the font size of the footer text */
+  padding: 0; /* Remove any additional padding */
+}
+
+.footer-line {
+  position: absolute;
+  bottom: calc(50% + 15px); 
+  left: 200px;
+  right: 200px;
+  height: 2px;
+  background-color: white;
+}
+
+@media screen and (max-width: 1500px) {
+  .navbar-button,
+  .navbar-link {
+    font-size: 20px;
+  }
+
+.header-item h1 {
+    font-size: 48px;
+  }
+
+.header-item p {
+  font-size: 18px;
+  padding: 0 100px; /* Add padding on the left and right sides */
+}
+  
+.mask-text {
+    font-size: 152px;
+  }
+
+.header-line {
+  width: calc(100% - 30px); /* Adjust width with left and right padding */
+  left: 20px; /* Add left padding */
+  right: 20px; /* Add right padding */
+}
+  
+.navbar {
+  padding: 30px 125px;
+}
+
+.navbar-button {
+  font-size: 24px;
+}
+  .scoreboard-item.left-score {
+font-size: 108px;
+font-style: normal;
+  margin-left: 150px; text-align: left;
+}
+
+.scoreboard-item.right-score {
+font-size: 108px;
+margin-right: 150px;
+text-align: right;
+}
+
+  .scoreboard-item-image {
+  width: calc(100% - 275px); /* Adjust this calculation based on your margin values */
+  margin-left: 150px; 
+  margin-right: 150px; 
+ 
+}
+
+.navbar-line {
+  left: 125px; 
+  right: 135px; 
+  }
+
+ .footer {
+  padding: 30px 125px;
+}
+
+.footer-left,
+.footer-right {
+  font-size: 16px;
+}
+
+.footer-line {
+  left: 125px;
+  right: 125px;
+} 
+
+  .question {
+    font-size: 16px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}
+
+.header-item p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-button,
+  .navbar-link {
+    font-size: 20px;
+  }
+
+  .header-item h1 {
+    font-size: 48px;
+  }
+
+.header-item p {
+  font-size: 16px;
+  padding: 0 80px; /* Add padding on the left and right sides */
+}
+
+.score-arrow.left-arrow {
+  position: absolute;
+   width: 42%; 
+  top: 50%;
+  left: -200px; 
+  transform: translateY(-50%) scale(0.7);
+}
+  
+.score-arrow {
+    width: 5%; 
+  }
+
+    .header-line {
+  width: calc(100% - 65px); /* Adjust width with left and right padding */
+  left: 20px; /* Add left padding */
+  right: 20px; /* Add right padding */
+}
+
+.mask-text {
+    font-size: 108px;
+  }
+
+.header {
+  padding: 15px 60px; /* Adjust the padding values as needed */
+}
+  
+.scoreboard-item-image {
+width: calc(100% - 200px);  /* Adjust this calculation based on your margin values */
+  margin-left: 100px; 
+  margin-right: 100px; 
+ 
+}
+
+.scoreboard-item-image img {
+  max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+  height: auto;
+}
+
+.scoreboard-item.left-score {
+font-size: 72px;
+font-style: normal;
+  margin-left: 120px; text-align: left;
+  font-weight: 200;
+}
+
+.scoreboard-item.stat-title {
+font-size: 24px;
+}
+
+.scoreboard-item.right-score {
+font-size: 72px;
+margin-right: 110px; 
+  text-align: right;
+font-weight: 200;
+}
+
+
+.stats-section {
+  margin-top: 70px;
+}
+
+.stats-section h2 {
+font-size: 40px;
+}
+  
+.navbar {
+  padding: 30px 100px;
+}
+
+.navbar-button {
+  font-size: 24px;
+}
+
+.navbar-line {
+  left: 100px; 
+  right: 110px; 
+  }
+
+ .footer {
+  padding: 30px 100px;
+}
+
+.footer-left,
+.footer-right {
+  font-size: 16px;
+}
+
+.footer-line {
+  left: 100px;
+  right: 100px;
+} 
+  
+.qanda-section {
+  padding: 0 150px; 
+}
+  
+  
+  .question {
+    font-size: 16px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .navbar-button,
+  .navbar-link {
+    font-size: 18px;
+  }
+
+  .header-item h1 {
+    font-size: 40px;
+  }
+
+     .header-line {
+  width: calc(100% - 75px); /* Adjust width with left and right padding */
+  left: 25px; /* Add left padding */
+  right: 20px; /* Add right padding */
+}
+  .header {
+  padding: 15px 40px; /* Adjust the padding values as needed */
+}
+
+ .scoreboard-item-image {
+  width: calc(100% - 200px); 
+  margin-left: 100px; 
+  margin-right: 100px; 
+}
+
+.scoreboard-item-image img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.scoreboard-item.left-score {
+font-size: 72px;
+font-style: normal;
+  margin-left: 120px; text-align: left;
+}
+
+  .scoreboard-item.with-arrow .score-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.50);
+}
+
+
+.scoreboard-item.stat-title {
+font-size: 20px;
+}
+
+.scoreboard-item.right-score {
+font-size: 72px;
+margin-right: 110px; text-align: right;
+} 
+
+.score-arrow.left-arrow {
+  left: -57px; 
+ }  
+  
+.mask-text {
+    font-size: 82px;
+  }
+.header-item p {
+  font-size: 14px;
+}
+  .navbar {
+  padding: 30px 80px;
+}
+
+.navbar-button {
+  font-size: 20px;
+}
+
+.navbar-line {
+  left: 80px; 
+  right: 90px; 
+  }
+
+ .footer {
+  padding: 30px 85px;
+}
+
+.footer-left,
+.footer-right {
+  font-size: 16px;
+}
+
+.footer-line {
+  left: 80px;
+  right: 80px;
+}   
+  
+ .qanda-section {
+  padding: 0 120px; 
+}
+
+  .question {
+    font-size: 16px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar-button,
+  .navbar-link {
+    font-size: 16px;
+  }
+
+  .header-item h1 {
+    font-size: 32px;
+  }
+
+  .mask-text {
+    font-size: 56px;
+  }
+
+.stats-section {
+  margin-top: 50px;
+}
+
+.stats-section h2 {
+font-size: 36px;
+}  
+
+.stats-section h2 {
+    font-size: 28px;
+  }
+
+ .header-item p {
+  font-size: 10px;
+  padding: 0 60px; /* Add padding on the left and right sides */
+} 
+
+.left-image{
+  margin-top: 22px;
+}
+
+.right-image {
+   margin-top: 22px;
+}  
+
+
+.navbar {
+  padding: 30px 90px;
+}
+
+.navbar-button {
+  font-size: 20px;
+}
+
+.navbar-line {
+  left: 70px; 
+  right: 100px; 
+}
+
+.footer {
+  padding: 30px 90px;
+}
+
+.footer-left,
+.footer-right {
+  font-size: 12px;
+}
+
+  .footer-right a {
+  font-size: 12px;
+}
+
+.footer-line {
+  left: 90px;
+  right: 90px;
+} 
+
+.scoreboard-item-image {
+  width: calc(100% - 200px); 
+  margin-left: 100px; 
+  margin-right: 100px; 
+ 
+}
+
+.scoreboard-item-image img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.scoreboard-item.left-score {
+font-size: 42px;
+font-style: normal;
+  margin-left: 105px; text-align: left;
+}
+
+ .score-arrow.left-arrow {
+  
+  left: -28px; 
+ }
+
+.scoreboard-item.stat-title {
+font-size: 16px;
+}
+
+.scoreboard-item.right-score {
+font-size: 42px;
+margin-right: 105px; text-align: right;
+} 
+
+.qanda-section {
+  padding: 0 100px; 
+}
+  
+.question {
+    font-size: 16px;
+  }
+
+  .answer {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-button,
+  .navbar-link {
+    font-size: 14px;
+  }
+
+  .text-container {
+    position: relative;
+    z-index: 1; 
+    text-align: center;
+    padding: 0; /* Remove padding */
+    /* Add max-width and margin to center the content */
+    max-width: 120%; /* Adjust the value as needed */
+    margin: 0 auto;
+  }
+  
+.header-item h1 {
+  font-size: 48px;
+  padding: 0 10px;
+}
+
+.header {
+  padding: 15px 15px; /* Adjust the padding values as needed */
+      overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+    .left-image,
+  .right-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Add background opacity */
+    
+    overflow-clip-margin: content-box;
+    overflow: clip;
+  }
+
+.header-line {
+  visibility: hidden;
+}
+
+  .left-image {
+    /* background: url('path-to-left-image.jpg') center/cover no-repeat; */
+    z-index: -1; /* Place behind the text */
+  }
+
+  .right-image {
+    /* background: url('path-to-right-image.jpg') center/cover no-repeat; */
+    z-index: -1; /* Place behind the text */
+  }
+
+  /* .text-container {
+    position: relative;
+    z-index: 1; 
+    text-align: center;
+    padding: 20px;
+  } */
+  
+.header-item p {
+  font-size: 12px;
+  padding: 0 10px; /* Add padding on the left and right sides */
+}
+
+.navbar {
+  padding: 30px 25px;
+}
+
+.navbar-button {
+  font-size: 16px;
+}
+
+.navbar-line {
+  left: 30px; 
+  right: 40px; 
+  }
+  
+ .stats-section {
+  margin-top: 50px;
+}
+  
+.stats-section h2 {
+font-size: 26px;
+} 
+
+.mask-text {
+    font-size: 64px;
+  }
+
+  .score-arrow.left-arrow {
+  position: absolute;
+   width: 42%; 
+  top: 50%;
+  left: -30px; 
+  transform: translateY(-50%) scale(0.5);
+}
+
+.footer {
+  padding: 30px 25px;
+}
+
+.footer-left,
+.footer-right {
+  font-size: 12px;
+}
+
+  .footer-right a {
+  font-size: 12px;
+}
+
+.footer-line {
+  left: 25px;
+  right: 25px;
+}  
+
+ .scoreboard-item-image {
+  width: calc(100% - 80px); 
+  margin-left: 40px; 
+  margin-right: 40px; 
+}
+
+.scoreboard-item-image img {
+  max-width: 100%; 
+  height: auto;
+}
+
+.scoreboard-item.left-score {
+font-size: 32px;
+font-style: normal;
+  margin-left: 55px; text-align: left;
+}
+
+.scoreboard-item.stat-title {
+font-size: 12px;
+}
+
+.scoreboard-item.right-score {
+font-size: 32px;
+margin-right: 50px; text-align: right;
+}  
+
+.qanda-section {
+  padding: 0 40px; 
+}  
+
+.question {
+    font-size: 14px;
+}
+
+  .answer {
+    font-size: 12px;
+  }
+}
