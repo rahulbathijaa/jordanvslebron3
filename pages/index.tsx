@@ -4,6 +4,7 @@ import styles from '../styles/styles.module.css'; // Import your CSS module
 import statsData from '../data/statsData'; // Import the stats data
 import qandaData from '../data/qandaData'; // Import the Q&A data
 import Image from 'next/image'; // Import the Image component for optimized image loading
+import ChatBox from '../components/ChatBox'; // Import the ChatBox component
 
 export default function Home() {
   return (
@@ -56,114 +57,51 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Add the ChatBox component below the header */}
+      <ChatBox />
+
       {/* Render your statsData */}
-      {/* {statsData.map((section, index) => (
+      {statsData.map((section, index) => (
         <section key={index} className={styles['stats-section']}>
           <h2>{section.sectionTitle}</h2>
           {section.data.map((item, itemIndex) => (
             <div key={itemIndex} className={styles['scoreboard']}>
               <div className={styles['scoreboard-item-image']}>
-                <Image src="/divider.png" alt="Image" width={400} height={400} />
+                <Image
+                  src="/divider.png"
+                  alt="Image"
+                  layout="responsive"
+                  width={200}
+                  height={200}
+                />
               </div>
               <div className={styles['scoreboard-item-container']}>
-                <div className={`${styles['scoreboard-item']} ${item.scoreComparison === 'left' ? styles['with-arrow'] : ''}`}>
-                  {item.scoreComparison === 'left' && <Image className={styles['score-arrow']} src="/leftarrow.png" alt="Left Arrow" width={20} height={20} />}
+                <div className={`${styles['scoreboard-item']} ${styles['left-score']}`}>
                   {item.leftScore}
                 </div>
-                <div className={`${styles['scoreboard-item']} ${styles['stat-title']} ${item.scoreComparison === 'left' ? styles['higher-score'] : (item.scoreComparison === 'right' ? styles['lower-score'] : '')}`}>
-                  <div className={`${styles['score-title-content']} ${item.scoreComparison === 'right' ? styles['justify-end'] : ''}`}>
-                    {item.statTitle}
-                  </div>
+                <div className={`${styles['scoreboard-item']} ${styles['stat-title']}`}>
+                  {item.statTitle}
                 </div>
-                <div className={`${styles['scoreboard-item']} ${item.scoreComparison === 'right' ? styles['with-arrow'] : ''}`}>
+                <div className={`${styles['scoreboard-item']} ${styles['right-score']}`}>
                   {item.rightScore}
-                  {item.scoreComparison === 'right' && <Image className={styles['score-arrow']} src="/rightarrow.png" alt="Right Arrow" width={20} height={20} />}
+                  {item.scoreComparison === 'right' && (
+                    <div className={styles['score-arrow-right-arrow-container']}>
+                      <Image
+                        className={styles['score-arrow-right-arrow']}
+                        src="/rightarrow.png"
+                        alt="Right Arrow"
+                        layout="responsive"
+                        width={30}
+                        height={30}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </section>
-      ))} */}
-
-{statsData.map((section, index) => (
-  <section key={index} className={styles['stats-section']}>
-    <h2>{section.sectionTitle}</h2>
-    {section.data.map((item, itemIndex) => (
-      <div key={itemIndex} className={styles['scoreboard']}>
-       <div className={styles['scoreboard-item-image']}>
-  <Image
-    src="/divider.png"
-    alt="Image"
-    layout="responsive"
-    width={200}
-    height={200}
-  />
-</div>
-
-
-  <div className={styles['scoreboard-item-container']}>
-          <div className={`${styles['scoreboard-item']} ${styles['left-score']}`}>
-               {/* {item.scoreComparison === 'left' && (
-    <div className={styles['score-arrow-left-arrow-container']}>
-              <Image 
-                  className={styles['score-arrow-left-arrow']} 
-                  src="/leftarrow.png"
-                  alt="Left Arrow" 
-                  layout="responsive"
-                  width={30}
-                  height={30} />
-      </div>
-            )} */}
-            {item.leftScore}
-         </div>
-            {/* {item.scoreComparison === 'left' && ( */}
-        
-   {/* {item.scoreComparison === 'left'} */}
-        
-
-    {/* <div className={`${styles['scoreboard-item']} ${styles['left-score']}`}>
-     {item.leftScore}
-      {item.scoreComparison === 'left' && (
-      <div className={styles['score-arrow-left-arrow-container']}>
-        <Image
-          className={styles['score-arrow-left-arrow']}
-          src="/leftarrow.png"
-          alt="Left Arrow"
-          layout="responsive"
-          width={30}
-          height={30}
-        />
-      </div>
-    )}
-  </div> */}
-    
-          <div className={`${styles['scoreboard-item']} ${styles['stat-title']}`}>
-            {/* <div className={`${styles['score-title-content']} ${item.scoreComparison === 'right' ? styles['justify-end'] : ''}`}> */}
-              {item.statTitle}
-            {/* </div> */}
-          </div>
-
-<div className={`${styles['scoreboard-item']} ${styles['right-score']}`}>
-  {item.rightScore}
-  {item.scoreComparison === 'right' && (
-    <div className={styles['score-arrow-right-arrow-container']}>
-      <Image
-        className={styles['score-arrow-right-arrow']}
-        src="/rightarrow.png"
-        alt="Right Arrow"
-        layout="responsive"
-        width={30}
-        height={30}
-      />
-    </div>
-  )}
-    </div>
-  </div>
-</div>
-    ))}
-  </section>
-))} 
-
+      ))}
 
       {/* Render your qandaData */}
       <section className={styles['qanda-section']}>
