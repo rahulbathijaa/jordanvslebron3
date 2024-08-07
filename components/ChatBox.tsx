@@ -16,7 +16,7 @@ const ChatBox: React.FC = () => {
     ]);
     try {
       console.log('Sending message:', messageToSend);
-      const response = await axios.post(`https://www.jordanvslebron.com/api/chat`, { message: messageToSend }, { timeout: 120000 });
+      const response = await axios.post('https://www.jordanvslebron.com/api/chat', { message: messageToSend }, { timeout: 120000 });
       console.log('Received response:', response.data);
       if (response.data && response.data.response) {
         setChat(prevChat => [
@@ -34,7 +34,7 @@ const ChatBox: React.FC = () => {
       }
       setChat(prevChat => [
         ...prevChat.slice(0, -1),
-        { user: 'AI', text: errorMessage, style: { color: 'white' } }
+        { user: 'Answer', text: errorMessage, style: { color: 'white' } }
       ]);
     } finally {
       setIsLoading(false);
