@@ -16,7 +16,7 @@ const ChatBox: React.FC = () => {
     ]);
     try {
       console.log('Sending message:', messageToSend);
-      const response = await axios.post('http://localhost:8000/api/chat', { message: messageToSend }, { timeout: 120000 });
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/chat`, { message: messageToSend }, { timeout: 120000 });
       console.log('Received response:', response.data);
       if (response.data && response.data.response) {
         setChat(prevChat => [
@@ -74,4 +74,3 @@ const ChatBox: React.FC = () => {
 };
 
 export default ChatBox;
-
