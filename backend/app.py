@@ -1,6 +1,6 @@
 import modal
 import os
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -21,8 +21,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
-    allow_origins=["https://www.jordanvslebron.com"],  # Adjust this if your frontend runs on a different origin
+    allow_origins=["http://localhost:3000", "https://www.jordanvslebron.com"],  # Combined allow_origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
