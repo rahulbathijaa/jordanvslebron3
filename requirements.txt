@@ -3,5 +3,4 @@ uvicorn
 pydantic
 transformers
 torch
-accelerate
 fastapi-cors
