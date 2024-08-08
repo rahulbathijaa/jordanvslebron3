@@ -16,7 +16,7 @@ const ChatBox: React.FC = () => {
     ]);
     try {
       console.log('Sending message:', messageToSend);
-      const response = await axios.post('/api/chat', { message: messageToSend }, { timeout: 120000 });
+      const response = await axios.post('https://jordanvslebron.vercel.app/api/chat', { message: messageToSend }, { timeout: 120000 });
       console.log('Received response:', response.data);
       if (response.data && response.data.response) {
         setChat(prevChat => [
