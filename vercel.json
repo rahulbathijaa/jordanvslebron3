@@ -1,12 +1,7 @@
-"builds": [
-    {
-        "src": "package.json",
-        "use": "@vercel/node"
+{
+    "functions": {
+        "api/**": {
+            "excludeFiles": "{.next,*.cache}/**"
+        }
     }
-],
-"routes": [
-    {
-        "src": "/(.*)",
-        "dest": "/"
-    }
-]
+}
