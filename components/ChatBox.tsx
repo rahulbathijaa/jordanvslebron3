@@ -11,7 +11,7 @@ const ChatBox: React.FC = () => {
 
   useEffect(() => {
     console.log('API_URL:', API_URL); 
-    console.log('Environment Variable:', process.env.REACT_APP_API_URL); 
+    console.log('Environment Variable:', process.env.NEXT_PUBLIC_API_URL); 
   }, []);
 
   const sendMessage = async (messageToSend: string) => {
