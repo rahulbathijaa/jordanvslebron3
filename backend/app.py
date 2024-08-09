@@ -22,7 +22,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000",  "http://localhost:8000", "https://jordanvslebron.com", "https://jordanvslebron.vercel.app"],  # Combined allow_origins
+    allow_origins=["http://localhost:3000",  "http://localhost:8000", "https://www.jordanvslebron.com", "https://jordanvslebron.vercel.app"],  # Combined allow_origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
