@@ -22,7 +22,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "https://www.jordanvslebron.com", "https://jordanvslebron.vercel.app"],  # Combined allow_origins
+    allow_origins=["http://localhost:3000",  "http://localhost:8000", "https://jordanvslebron.com", "https://jordanvslebron.vercel.app"],  # Combined allow_origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -91,7 +91,7 @@ if os.getenv("VERCEL"):
 
 @modal_app.local_entrypoint()
 def main():
-    uvicorn.run(app, host="0.0.0.0", port=8000)
 
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 if __name__ == "__main__":
     modal.run()
