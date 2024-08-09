@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import styles from '../styles/styles.module.css';
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+
 const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
   const [chat, setChat] = useState<{ user: string, text: string }[]>([]);
@@ -16,7 +18,7 @@ const ChatBox: React.FC = () => {
     ]);
     try {
       console.log('Sending message:', messageToSend);
-      const response = await axios.post('${API_URL}', { message: messageToSend }, { timeout: 120000 });
+      const response = await axios.post(`${API_URL}/api/chat`, { message: messageToSend }, { timeout: 120000 });
       console.log('Received response:', response.data);
       if (response.data && response.data.response) {
         setChat(prevChat => [
