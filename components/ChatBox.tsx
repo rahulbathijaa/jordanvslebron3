@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from '../styles/styles.module.css';
 
@@ -8,6 +8,10 @@ const ChatBox: React.FC = () => {
   const [message, setMessage] = useState('');
   const [chat, setChat] = useState<{ user: string, text: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    console.log('API_URL:', API_URL); // Add this line to log the API_URL
+  }, []);
 
   const sendMessage = async (messageToSend: string) => {
     setIsLoading(true);
