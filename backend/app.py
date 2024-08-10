@@ -95,9 +95,9 @@ if os.getenv("VERCEL"):
     async def startup_event():
         modal_app.run()
 
-@modal_app.local_entrypoint()
-def main():
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+# @modal_app.local_entrypoint()
+# def main():
+#     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-if __name__ == "__main__":
-    modal.run()
+# if __name__ == "__main__":
+#     modal.run()
