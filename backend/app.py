@@ -77,7 +77,7 @@ llm = LLMInference()
 async def chat_endpoint(message: Message):
     prompt = message.message.lower()
     # Check for specific questions
-    if any(phrase in prompt for phrase in ["who's the goat", "whos the goat", "who is the goat", "who's the greatest", "whos the greatest", "who is the greatest"]):
+    if any(phrase in prompt for phrase in ["who's the goat", "whos the goat", "who is the goat", "who's the greatest", "whos the greatest ever", "who is the greatest"]):
         return {"response": "That's for you to decide ;)"}
     else:
         # Call the generate method without await
