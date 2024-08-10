@@ -4,6 +4,7 @@ from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+from modal import asgi_app  # New import
 
 MODEL_PATH = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
@@ -84,6 +85,11 @@ async def chat_endpoint(message: Message):
         response = llm.generate.remote(f"Human: {message.message}\nAI:")
         return {"response": response}
 
+@modal_app.function()  # New decorator
+@asgi_app()  # New decorator
+def fastapi_app():
+    return app
+
 if os.getenv("VERCEL"):
     @app.on_event("startup")
     async def startup_event():
@@ -91,7 +97,7 @@ if os.getenv("VERCEL"):
 
 @modal_app.local_entrypoint()
 def main():
-
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
 if __name__ == "__main__":
     modal.run()
