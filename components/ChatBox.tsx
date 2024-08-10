@@ -9,11 +9,6 @@ const ChatBox: React.FC = () => {
   const [chat, setChat] = useState<{ user: string, text: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    console.log('API_URL:', API_URL); 
-    console.log('Environment Variable:', process.env.NEXT_PUBLIC_API_URL); 
-  }, []);
-
   const sendMessage = async (messageToSend: string) => {
     setIsLoading(true);
     setChat(prevChat => [
