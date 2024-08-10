@@ -10,7 +10,7 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 
 llm_image = (
     modal.Image.debian_slim(python_version="3.11")
-    .pip_install("transformers", "torch", "accelerate", "fastapi", "uvicorn", "fastapi-cors")
+    .pip_install("transformers", "torch", "accelerate", "fastapi", "fastapi-cors")
 )
 
 volume = modal.Volume.from_name("llm-model-volume", create_if_missing=True)
