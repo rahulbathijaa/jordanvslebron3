@@ -3,7 +3,6 @@ import os
 from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
-import uvicorn
 from modal import asgi_app  # New import
 
 MODEL_PATH = "meta-llama/Meta-Llama-3.1-8B-Instruct"
